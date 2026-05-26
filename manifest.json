@@ -1,10 +1,10 @@
 {
   "name": "한국렌탈영업팀",
   "short_name": "한국렌탈영업팀",
-  "start_url": "./index.html",
+  "start_url": "./index.html?embed_options=hide_footer",
   "display": "standalone",
-  "background_color": "#1a73e8",
-  "theme_color": "#1a73e8",
+  "background_color": "#1B4375",
+  "theme_color": "#1B4375",
   "icons": [
     {
       "src": "icon.png",
