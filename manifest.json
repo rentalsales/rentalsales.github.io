@@ -1,6 +1,6 @@
 {
-  "name": "한국렌탈영업팀",
-  "short_name": "한국렌탈영업팀",
+  "name": "IRIS-KRC",
+  "short_name": "IRIS",
   "start_url": "./index.html?embed_options=hide_footer",
   "display": "standalone",
   "background_color": "#1B4375",
