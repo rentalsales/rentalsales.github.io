@@ -1,6 +1,6 @@
 {
   "name": "한국렌탈영업팀",
-  "short_name": "영업대시보드",
+  "short_name": "한국렌탈영업",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
