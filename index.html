@@ -87,39 +87,6 @@
         appFrame.src = atob(secretCode);
         appFrame.allow = "microphone; camera; notifications; display-capture; autoplay; clipboard-write;";
         
-        // -------------------------------------------------------------
-        // 🔥 [여기서부터 신규 추가] 스트림릿 앱이 보낸 신호를 받아 팝업을 띄우는 리스너
-        // -------------------------------------------------------------
-        window.addEventListener('message', function(event) {
-            // 전달받은 메시지 기둥이 IRIS_TEST_NOTIFICATION 일 때만 반응
-            if (event.data && event.data.type === 'IRIS_TEST_NOTIFICATION') {
-                const payload = event.data;
-                
-                // 스마트폰 브라우저 상단 알림 권한 확인 및 요청
-                if (Notification.permission === "granted") {
-                    showNativeNotification(payload.title, payload.body);
-                } else if (Notification.permission !== "denied") {
-                    Notification.requestPermission().then(permission => {
-                        if (permission === "granted") {
-                            showNativeNotification(payload.title, payload.body);
-                        }
-                    });
-                }
-            }
-        });
-
-        // 스마트폰 알림 창 푸시 실행기
-        function showNativeNotification(title, body) {
-            new Notification(title, {
-                body: body,
-                icon: 'icon-192.png',
-                vibrate: [200, 100, 200] // 진동 패턴 진동(200ms)-쉼(100ms)-진동(200ms)
-            });
-        }
-        // -------------------------------------------------------------
-        // 🔥 [여기까지 신규 추가]
-        // -------------------------------------------------------------
-        
         // 🌟 핵심 마법: 스트림릿 앱이 완벽하게 다 켜지면 실행되는 동작
         appFrame.onload = function() {
             const loader = document.getElementById('loading-screen');
