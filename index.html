@@ -84,7 +84,10 @@
         const secretCode = "aHR0cHM6Ly9rcmMtaXJpcy1jb3JlLXYyLnN0cmVhbWxpdC5hcHAvP2VtYmVkPXRydWUmZW1iZWRfb3B0aW9ucz1oaWRlX2Zvb3Rlcg==";
         
         const appFrame = document.createElement('iframe');
-        appFrame.src = atob(secretCode);
+        
+        # 🌟 [수정 포인트] 복호화된 URL 뒤에 스트림릿 라이트 테마 강제 파라미터(&theme=light)를 결합합니다.
+        appFrame.src = atob(secretCode) + "&theme=light";
+        
         appFrame.allow = "microphone; camera; notifications; display-capture; autoplay; clipboard-write;";
         
         // 🌟 핵심 마법: 스트림릿 앱이 완벽하게 다 켜지면 실행되는 동작
