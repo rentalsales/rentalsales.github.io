@@ -80,30 +80,49 @@
     </div>
 
     <script>
+
         // 암호화된 진짜 주소
+
         const secretCode = "aHR0cHM6Ly9rcmMtaXJpcy1jb3JlLXYyLnN0cmVhbWxpdC5hcHAvP2VtYmVkPXRydWUmZW1iZWRfb3B0aW9ucz1oaWRlX2Zvb3Rlcg==";
+
         
+
         const appFrame = document.createElement('iframe');
-        
-        # 🌟 [수정 포인트] 복호화된 URL 뒤에 스트림릿 라이트 테마 강제 파라미터(&theme=light)를 결합합니다.
-        appFrame.src = atob(secretCode) + "&theme=light";
-        
+
+        appFrame.src = atob(secretCode);
+
         appFrame.allow = "microphone; camera; notifications; display-capture; autoplay; clipboard-write;";
+
         
+
         // 🌟 핵심 마법: 스트림릿 앱이 완벽하게 다 켜지면 실행되는 동작
+
         appFrame.onload = function() {
+
             const loader = document.getElementById('loading-screen');
+
             // 1. 투명도를 0으로 만들어 스르륵 사라지게 함
+
             loader.style.opacity = '0'; 
+
             
+
             // 2. 0.5초(애니메이션 끝나는 시간) 뒤에 로딩 덮개를 아예 삭제하여 클릭 방해를 없앰
+
             setTimeout(() => {
+
                 loader.style.display = 'none';
+
             }, 500); 
+
         };
+
         
+
         // 화면에 iframe 부착
+
         document.body.appendChild(appFrame);
+
     </script>
 </body>
 </html>
