@@ -85,8 +85,8 @@
         
         const appFrame = document.createElement('iframe');
         
-        // 🌟 [수정된 부분] 복호화된 주소 뒤에 화이트 테마 강제 옵션을 딱 붙여줍니다!
-        appFrame.src = atob(secretCode) + "&theme=light";
+        // 🌟 [원상복구] 다시 원래 코드로 되돌렸습니다! 무한로딩 해결!
+        appFrame.src = atob(secretCode);
         
         appFrame.allow = "microphone; camera; notifications; display-capture; autoplay; clipboard-write;";
         
